@@ -4,41 +4,25 @@ namespace Envelopes
 {
     public class View
     {
-        public void Start()
-        {
-            //Console.WriteLine("Hello World");
-        }
-
         public float EnterSides(string inputString)
         {
             float currentSize;
 
             Console.Write(inputString);
-
-            while (!float.TryParse(Console.ReadLine(), out currentSize))
+            
+            while (!CheckValue(out currentSize))
             {
-                Console.WriteLine("\nНеобходимо ввести число в диапазоне 1 - 3.4e38f");
+                Console.WriteLine($"\nНеобходимо ввести число в диапазоне 1 - {float.MaxValue}");
                 Console.Write(inputString);
             }
 
             return currentSize;
         }
 
-        public EnvelopeModel envelopeModel()
-        {
-            float a1Size = 1;
-            float b1Size = 1;
-
-            return new EnvelopeModel
-            {
-                height = a1Size,
-                width = b1Size
-            };
-
-        }
-
         public bool PrintResult(int result)
         {
+            bool isResult;
+
             switch (result)
             {
                 case 1:
@@ -48,20 +32,39 @@ namespace Envelopes
                     Console.WriteLine("\nВторой конверт может быть помещен в первый");
                     break;
                 default:
-                    Console.WriteLine("\n2Ни один конверт не может быть помещен в другой");
+                    Console.WriteLine("\nНи один конверт не может быть помещен в другой");
                     break;
             }
 
             Console.WriteLine("\nПроверить другие конверты (y/yes)?");
+
             switch (Console.ReadLine().ToLower())
             {
                 case "y":
                 case "yes":
                     Console.WriteLine("");
-                    return true;
+                    isResult = true;
+                    break;
                 default:
-                    return false;
+                    isResult = false;
+                    break;
             }
+
+            return isResult;
+        }
+
+        private bool CheckValue(out float currentSize)
+        {
+            bool isResult = false;
+
+            float.TryParse(Console.ReadLine(), out currentSize);
+
+            if (currentSize > 0 && currentSize < float.MaxValue)
+            {
+                isResult = true;
+            }
+
+            return isResult;
         }
     }
 }

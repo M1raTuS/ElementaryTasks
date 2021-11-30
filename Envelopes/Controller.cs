@@ -8,34 +8,36 @@ namespace Envelopes
         public float width { get; set; }
 
         Checker checker = new Checker();
-        EnvelopeModel envelope1;
-        EnvelopeModel envelope2;
+        Envelope envelope1;
+        Envelope envelope2;
 
         public void Run(View view)
         {
-            view.Start();
-
             do
             {
-                Console.WriteLine("Введите значения для первого конверта");
+                try
+                {
+                    Console.WriteLine("Введите значения для первого конверта");
 
-                height = view.EnterSides("Введите a: ");
-                width = view.EnterSides("Введите b: ");
+                    height = view.EnterSides("Введите a: ");
+                    width = view.EnterSides("Введите b: ");
 
-                envelope1 = checker.envelopeModel(height, width);
+                    envelope1 = checker.envelopeModel(height, width);
 
-                Console.WriteLine("\nВведите значения для Второго конверта");
+                    Console.WriteLine("\nВведите значения для Второго конверта");
 
-                height = view.EnterSides("Введите c: ");
-                width = view.EnterSides("Введите d: ");
+                    height = view.EnterSides("Введите c: ");
+                    width = view.EnterSides("Введите d: ");
 
-                envelope2 = checker.envelopeModel(height, width);
+                    envelope2 = checker.envelopeModel(height, width);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
 
             }
-            while (view.PrintResult(checker.PutEnvelope(envelope1,envelope2)));
-
+            while (view.PrintResult(checker.PutEnvelope(envelope1, envelope2)));
         }
-
     }
-
 }

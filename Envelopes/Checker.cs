@@ -5,18 +5,25 @@
         public float width { get; set; }
         public float height { get; set; }
 
-        public int PutEnvelope(EnvelopeModel envelope1, EnvelopeModel envelope2)
+        public int PutEnvelope(Envelope envelope1, Envelope envelope2)
         {
+            int result = 0;
+
             if (envelope1.width < envelope2.width & envelope1.height < envelope2.height)
-                return 1;
+            {
+                result = 1;
+            }
             else if (envelope2.width < envelope1.width & envelope2.height < envelope1.height)
-                return 2;
-            return 0;
+            {
+                result = 2;
+            }
+
+            return result;
         }
 
-        public EnvelopeModel envelopeModel(float height, float width)
+        public Envelope envelopeModel(float height, float width)
         {
-            return new EnvelopeModel
+            return new Envelope
             {
                 height = height,
                 width = width
