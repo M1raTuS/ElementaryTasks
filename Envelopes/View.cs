@@ -4,13 +4,15 @@ namespace Envelopes
 {
     public class View
     {
+        Checker check = new Checker();
+
         public float EnterSides(string inputString)
         {
             float currentSize;
 
             Console.Write(inputString);
             
-            while (!CheckValue(out currentSize))
+            while (!check.CheckValue(out currentSize))
             {
                 Console.WriteLine($"\nНеобходимо ввести число в диапазоне 1 - {float.MaxValue}");
                 Console.Write(inputString);
@@ -48,20 +50,6 @@ namespace Envelopes
                 default:
                     isResult = false;
                     break;
-            }
-
-            return isResult;
-        }
-
-        private bool CheckValue(out float currentSize)
-        {
-            bool isResult = false;
-
-            float.TryParse(Console.ReadLine(), out currentSize);
-
-            if (currentSize > 0 && currentSize < float.MaxValue)
-            {
-                isResult = true;
             }
 
             return isResult;

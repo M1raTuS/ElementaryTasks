@@ -1,4 +1,6 @@
-﻿namespace Envelopes
+﻿using System;
+
+namespace Envelopes
 {
     public class Checker
     {
@@ -33,6 +35,20 @@
                 height = height,
                 width = width
             };
+        }
+
+        public bool CheckValue(out float currentSize)
+        {
+            bool isResult = false;
+
+            float.TryParse(Console.ReadLine(), out currentSize);
+
+            if (currentSize > 0 && currentSize < float.MaxValue)
+            {
+                isResult = true;
+            }
+
+            return isResult;
         }
     }
 }
