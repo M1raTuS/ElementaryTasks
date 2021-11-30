@@ -2,9 +2,6 @@
 {
     public class Checker
     {
-        public float width { get; set; }
-        public float height { get; set; }
-
         public int PutEnvelope(Envelope envelope1, Envelope envelope2)
         {
             int result = 0;
