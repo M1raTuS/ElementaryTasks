@@ -13,7 +13,15 @@
             {
                 result = 1;
             }
+            else if (envelope1.width < envelope2.height & envelope1.height < envelope2.width)
+            {
+                result = 1;
+            }
             else if (envelope2.width < envelope1.width & envelope2.height < envelope1.height)
+            {
+                result = 2;
+            }
+            else if (envelope2.width < envelope1.height & envelope2.height < envelope1.width)
             {
                 result = 2;
             }
