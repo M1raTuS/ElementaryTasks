@@ -12,7 +12,7 @@ namespace Envelopes
 
             Console.Write(inputString);
             
-            while (!check.CheckValue(out currentSize))
+            while (!check.CheckValueLimit(out currentSize))
             {
                 Console.WriteLine($"\nНеобходимо ввести число в диапазоне 1 - {float.MaxValue}");
                 Console.Write(inputString);
