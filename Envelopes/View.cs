@@ -8,13 +8,15 @@ namespace Envelopes
 
         public float EnterSides(string inputString)
         {
+            const float minValue = 1;
+            const float maxValue = float.MaxValue;
             float currentSize;
 
             Console.Write(inputString);
             
             while (!check.CheckValueLimit(out currentSize))
             {
-                Console.WriteLine($"\nНеобходимо ввести число в диапазоне 1 - {float.MaxValue}");
+                Console.WriteLine($"\nНеобходимо ввести число в диапазоне {minValue} - {maxValue}");
                 Console.Write(inputString);
             }
 
@@ -23,8 +25,6 @@ namespace Envelopes
 
         public bool PrintResult(int result)
         {
-            bool isResult;
-
             switch (result)
             {
                 case 1:
@@ -45,14 +45,10 @@ namespace Envelopes
                 case "y":
                 case "yes":
                     Console.WriteLine("");
-                    isResult = true;
-                    break;
+                    return true;
                 default:
-                    isResult = false;
-                    break;
+                    return false;
             }
-
-            return isResult;
         }
     }
 }
