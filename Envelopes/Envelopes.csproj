@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checker.cs" />
+    <Compile Include="Validation.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Envelope.cs" />
     <Compile Include="Program.cs" />

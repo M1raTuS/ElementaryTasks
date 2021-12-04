@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Tickets
+﻿namespace Tickets
 {
     public class Controller
     {
@@ -9,31 +7,31 @@ namespace Tickets
         public void Run()
         {
             Tickets tickets = new Tickets();
+            View view = new View();
 
             do
             {
-                int min;
-                int max;
+                int min, max;
 
-                View.FirstTicket(out min);
-                View.SecondTicket(out max);
-                
-                if (!Checker.MinMaxValidator(min, max))
+                min = view.MinimalTicketValue();
+                max = view.MaximalTicketValue();
+
+                if (!Validation.MinMaxValidator(min, max))
                 {
-                    View.IncorectValue();
+                    view.IncorrectValue();
                 }
                 else
                 {
-                    int firstTickets = tickets.Count(min, max, false);
-                    int secondTickets = tickets.Count(min, max, true);
-                    int resultWinner = tickets.Compare(firstTickets, secondTickets);
+                    int firstTickets = tickets.TicketsCount(min, max, false);
+                    int secondTickets = tickets.TicketsCount(min, max, true);
+                    int resultWinner = tickets.CompareResult(firstTickets, secondTickets);
 
-                    View.Firstway(firstTickets);
-                    View.SecondWay(secondTickets);
-                    View.Winner(resultWinner);
+                    view.Firstway(firstTickets);
+                    view.SecondWay(secondTickets);
+                    view.Winner(resultWinner);
                 }
 
-                resume = View.Resume();
+                resume = view.Resume();
             }
             while (resume);
         }

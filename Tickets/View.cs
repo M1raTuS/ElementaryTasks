@@ -5,7 +5,7 @@ namespace Tickets
 {
     public class View
     {
-        public static bool Resume()
+        public bool Resume()
         {
             Console.WriteLine("\nВвести новые билеты (y/yes)?");
 
@@ -20,22 +20,22 @@ namespace Tickets
             }
         }
 
-        public static void IncorectValue()
+        public void IncorrectValue()
         {
-            Console.WriteLine("\nНомер билета должен быть в диапазоне от 1 до 999999: ");
+            Console.WriteLine("\nНомер билета должен быть целым числом в диапазоне от 1 до 999999");
         }
 
-        public static void Firstway(int firstAmount)
+        public void Firstway(int firstAmount)
         {
             Console.WriteLine($"\nПростой способ обнаружил {firstAmount} счастливых билетов.");
         }
 
-        public static void SecondWay(int secondAmount)
+        public void SecondWay(int secondAmount)
         {
             Console.WriteLine($"Сложный способ обнаружил {secondAmount} счастливых билетов.");
         }
 
-        public static void Winner(int winner)
+        public void Winner(int winner)
         {
             if (winner != 2)
             {
@@ -48,16 +48,26 @@ namespace Tickets
             }
         }
 
-        public static void FirstTicket(out int value)
+        public int MinimalTicketValue()
         {
+            int value;
+
             Console.Write("Введите начало диапазона: ");
+
             int.TryParse(Console.ReadLine(), out value);
+
+            return value;
         }
 
-        public static void SecondTicket(out int value)
+        public int MaximalTicketValue()
         {
+            int value;
+
             Console.Write("Введите конец диапазона: ");
+
             int.TryParse(Console.ReadLine(), out value);
+
+            return value;
         }
     }
 }

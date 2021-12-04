@@ -2,32 +2,26 @@
 {
     public class Envelope
     {
-        public float width { get; set; }
-        public float height { get; set; }
+        private float Height { get; set; }
+        private float Width { get; set; }
 
         public Envelope(float height, float width)
         {
-            this.height = height;
-            this.width = width;
+            Height = height;
+            Width = width;
         }
 
         public int PutEnvelope(Envelope anotherEnvelope)
         {
             int envelopeResult = 0;
 
-            if (width < anotherEnvelope.width & height < anotherEnvelope.height)
+            if (Width < anotherEnvelope.Width & Height < anotherEnvelope.Height
+               || (Width < anotherEnvelope.Height & Height < anotherEnvelope.Width))
             {
                 envelopeResult = 1;
             }
-            else if (width < anotherEnvelope.height & height < anotherEnvelope.width)
-            {
-                envelopeResult = 1;
-            }
-            else if (anotherEnvelope.width < width & anotherEnvelope.height < height)
-            {
-                envelopeResult = 2;
-            }
-            else if (anotherEnvelope.width < height & anotherEnvelope.height < width)
+            else if ((anotherEnvelope.Width < Width & anotherEnvelope.Height < Height)
+                    || (anotherEnvelope.Width < Height & anotherEnvelope.Height < Width))
             {
                 envelopeResult = 2;
             }

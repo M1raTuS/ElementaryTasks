@@ -1,40 +1,29 @@
-﻿using System;
-
-namespace Envelopes
+﻿namespace Envelopes
 {
     public class Controller
     {
-        public float height { get; set; }
-        public float width { get; set; }
-
-        Envelope envelope1;
-        Envelope envelope2;
-
         public void Run(View view)
         {
+            Envelope envelope1;
+            Envelope envelope2;
+
             do
             {
-                try
-                {
-                    Console.WriteLine("Введите значения для первого конверта");
+                float height, width;
 
-                    height = view.EnterSides("Введите a: ");
-                    width = view.EnterSides("Введите b: ");
+                view.PrintFirstInfoMessage();
 
-                    envelope1 = new Envelope(height, width);
+                height = view.SetSides("Введите a: ");
+                width = view.SetSides("Введите b: ");
 
-                    Console.WriteLine("\nВведите значения для Второго конверта");
+                envelope1 = new Envelope(height, width);
 
-                    height = view.EnterSides("Введите c: ");
-                    width = view.EnterSides("Введите d: ");
+                view.PrintSecondInfoMessage();
 
-                    envelope2 = new Envelope(height, width);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
+                height = view.SetSides("Введите c: ");
+                width = view.SetSides("Введите d: ");
 
+                envelope2 = new Envelope(height, width);
             }
             while (view.PrintResult(envelope1.PutEnvelope(envelope2)));
         }

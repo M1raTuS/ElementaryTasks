@@ -1,14 +1,13 @@
-﻿using System;
-
-namespace Tickets
+﻿namespace Tickets
 {
-    public class Checker
+    public class Validation
     {
         public static bool MinMaxValidator(int min, int max)
         {
+            const int zero = 0;
             bool isValid = false;
 
-            if (min > 0 && max > 0 && min < max)
+            if (min > zero && max > zero && min < max)
             {
                 isValid = true;
             }

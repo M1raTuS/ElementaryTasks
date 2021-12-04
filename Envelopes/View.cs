@@ -4,17 +4,17 @@ namespace Envelopes
 {
     public class View
     {
-        Checker check = new Checker();
+        Validation valid = new Validation();
 
-        public float EnterSides(string inputString)
+        public float SetSides(string inputString)
         {
             const float minValue = 1;
             const float maxValue = float.MaxValue;
             float currentSize;
 
             Console.Write(inputString);
-            
-            while (!check.CheckValueLimit(out currentSize))
+
+            while (!valid.ValueLimitValidate(out currentSize))
             {
                 Console.WriteLine($"\nНеобходимо ввести число в диапазоне {minValue} - {maxValue}");
                 Console.Write(inputString);
@@ -49,6 +49,16 @@ namespace Envelopes
                 default:
                     return false;
             }
+        }
+
+        public void PrintFirstInfoMessage()
+        {
+            Console.WriteLine("Введите значения для первого конверта");
+        }
+
+        public void PrintSecondInfoMessage()
+        {
+            Console.WriteLine("\nВведите значения для второго конверта");
         }
     }
 }
