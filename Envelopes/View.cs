@@ -4,7 +4,7 @@ namespace Envelopes
 {
     public class View
     {
-        Validation valid = new Validation();
+        readonly Validation valid = new Validation();
 
         public float SetSides(string inputString)
         {

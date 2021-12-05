@@ -7,7 +7,7 @@
             const int zero = 0;
             bool isValid = false;
 
-            if (min > zero && max > zero && min < max)
+            if (min >= zero && max > zero && min < max)
             {
                 isValid = true;
             }

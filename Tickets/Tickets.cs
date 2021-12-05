@@ -41,25 +41,25 @@
             return value;
         }
 
-        public int TicketsCount(int minNumber, int maxNumber, bool flag)
+        public delegate bool Ways(int[] digits);
+
+        public int TicketsCount(int minNumber, int maxNumber, EStates checkWay)
         {
             int count = 0;
 
+            Ways way;
+            way = SimpleCountMethod;
+
+            if (checkWay != 0)
+            {
+                way = DifficultCountMethod;
+            }
+
             for (int i = minNumber; i <= maxNumber; i++)
             {
-                if (!flag)
+                if (way(GetNumbers(i)))
                 {
-                    if (SimpleCountMethod(GetNumbers(i)))
-                    {
-                        count++;
-                    }
-                }
-                else
-                {
-                    if (DifficultCountMethod(GetNumbers(i)))
-                    {
-                        count++;
-                    }
+                    count++;
                 }
             }
 

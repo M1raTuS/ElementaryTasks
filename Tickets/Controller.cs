@@ -2,7 +2,7 @@
 {
     public class Controller
     {
-        public bool resume { get; set; } = false;
+        public bool IsResume { get; set; } = false;
 
         public void Run()
         {
@@ -22,8 +22,8 @@
                 }
                 else
                 {
-                    int firstTickets = tickets.TicketsCount(min, max, false);
-                    int secondTickets = tickets.TicketsCount(min, max, true);
+                    int firstTickets = tickets.TicketsCount(min, max, EStates.SimpleMethod);
+                    int secondTickets = tickets.TicketsCount(min, max, EStates.DifficultMethod);
                     int resultWinner = tickets.CompareResult(firstTickets, secondTickets);
 
                     view.Firstway(firstTickets);
@@ -31,9 +31,9 @@
                     view.Winner(resultWinner);
                 }
 
-                resume = view.Resume();
+                IsResume = view.Resume();
             }
-            while (resume);
+            while (IsResume);
         }
     }
 }

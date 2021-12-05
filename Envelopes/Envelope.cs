@@ -15,13 +15,13 @@
         {
             int envelopeResult = 0;
 
-            if (Width < anotherEnvelope.Width & Height < anotherEnvelope.Height
-               || (Width < anotherEnvelope.Height & Height < anotherEnvelope.Width))
+            if ((Width < anotherEnvelope.Width && Height < anotherEnvelope.Height)
+               || (Width < anotherEnvelope.Height && Height < anotherEnvelope.Width))
             {
                 envelopeResult = 1;
             }
-            else if ((anotherEnvelope.Width < Width & anotherEnvelope.Height < Height)
-                    || (anotherEnvelope.Width < Height & anotherEnvelope.Height < Width))
+            else if ((anotherEnvelope.Width < Width && anotherEnvelope.Height < Height)
+                    || (anotherEnvelope.Width < Height && anotherEnvelope.Height < Width))
             {
                 envelopeResult = 2;
             }

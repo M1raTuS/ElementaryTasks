@@ -22,7 +22,7 @@ namespace Tickets
 
         public void IncorrectValue()
         {
-            Console.WriteLine("\nНомер билета должен быть целым числом в диапазоне от 1 до 999999");
+            Console.WriteLine("\nНомер билета должен быть целым числом в диапазоне от 0 до 999999");
         }
 
         public void Firstway(int firstAmount)

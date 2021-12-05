@@ -13,6 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericTask", "GenericTask\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvelopesTests", "EnvelopesTests\EnvelopesTests.csproj", "{C9590525-5D25-427B-A859-1C30E6A74624}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberToStringTests", "NumberToStringTests\NumberToStringTests.csproj", "{015B522A-4D48-4630-BB23-AA0F7C0E99A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF08B641-8BCE-44A1-AB40-FF90503F17F3} = {FF08B641-8BCE-44A1-AB40-FF90503F17F3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketsTests", "TicketsTests\TicketsTests.csproj", "{13A78041-89BD-4F11-B57D-445477564521}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +46,14 @@ Global
 		{C9590525-5D25-427B-A859-1C30E6A74624}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9590525-5D25-427B-A859-1C30E6A74624}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9590525-5D25-427B-A859-1C30E6A74624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015B522A-4D48-4630-BB23-AA0F7C0E99A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015B522A-4D48-4630-BB23-AA0F7C0E99A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015B522A-4D48-4630-BB23-AA0F7C0E99A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015B522A-4D48-4630-BB23-AA0F7C0E99A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A78041-89BD-4F11-B57D-445477564521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A78041-89BD-4F11-B57D-445477564521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A78041-89BD-4F11-B57D-445477564521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A78041-89BD-4F11-B57D-445477564521}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
